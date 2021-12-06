@@ -1,0 +1,146 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastrar</title>
+   <!--Made with love by Mutiullah Samim -->
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card_cadastro">
+			<div class="card-header">
+				<h3>Cadastro</h3>
+
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input id="nome" value="Giovane" type="text" class="form-control" placeholder="Nome completo">						
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input id="email" value="Email" type="text" class="form-control" placeholder="Email">						
+					</div>
+
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class=" fas fa-address-card "></i></span>
+						</div>
+						<input id="cpf" value="062.848.985-41" type="text" class="form-control" placeholder="CPF">						
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<select id="sexo" class="browser-default custom-select">
+							<option selected>Sexo</option>
+							<option value="F">Feminino</option>
+							<option value="M">Masculino</option>
+							<option value="O">Outro</option>
+						</select>
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class=" fas fa-address-card "></i></span>
+						</div>
+						<input id="nascimento" value="16/01/1995" type="text" class="form-control" placeholder="Data Nascimento">						
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input id="senha" value="123" type="password" class="form-control" placeholder="Senha">
+					</div>
+
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input id="confima_senha" value="123" type="password" class="form-control" placeholder="Confirme a senha">
+					</div>
+
+
+            <div class="row">
+              <div class="col-1"></div>
+                <div class="col-3">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="senha_clara">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Senha clara
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="hash_md5" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Hash MD5
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="hash_salt" checked>
+                  <label class="form-check-label" for="flexRadioDefault3">
+                    Hash e Salt
+                  </label>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-7"><br>
+              <button onclick="cadastrar()" class="btn float-right login_btn" >OK</button>
+            </div>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+  function cadastrar(){   
+    var nome   		 =  document.getElementById("nome").value;
+    var email  		 =  document.getElementById("email").value;
+    var cpf    		 =  document.getElementById("cpf").value;
+		var nascimento =  document.getElementById("nascimento").value;
+    var sexo    	 =  document.getElementById("sexo").value;
+
+    if(document.getElementById("senha_clara").checked){
+      console.log("Clara");
+    }else{
+      if(document.getElementById("hash_md5").checked){
+        console.log("MD5");
+      }else{
+        console.log("Salt");
+      }
+    } 
+    window.location.assign("./index.html");
+		console.log(nascimento + sexo);
+    alert("Cadastro realizado!");
+  }
+</script>
